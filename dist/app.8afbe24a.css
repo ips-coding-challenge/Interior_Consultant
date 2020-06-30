@@ -1,3 +1,35 @@
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+.column-m {
+  flex-basis: 66.6667%;
+}
+.column-sm {
+  flex-basis: 33.333%;
+}
+.column-xs {
+  flex-basis: 25%;
+}
+@media (max-width: 800px) {
+  .column {
+    flex-basis: 100%;
+  }
+}
+
+/* @media (max-width: 1200px) {
+  .column-m {
+    flex-basis: 50%;
+  }
+} */
+
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap");
 
 :root {
@@ -18,7 +50,7 @@
 
 html {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.1em;
   color: white;
 }
 
@@ -160,30 +192,7 @@ footer {
   height: 40px;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-}
-.col-sm {
-  flex: 1;
-}
-.col-lg {
-  flex: 2;
-}
 /* MEDIA QUERIES */
-@media screen and (min-width: 800px) {
-  .column {
-    flex: 1;
-  }
-}
 
 @media screen and (max-width: 799px) {
   .container {
