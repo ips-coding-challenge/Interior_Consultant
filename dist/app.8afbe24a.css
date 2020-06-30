@@ -35,7 +35,7 @@
 :root {
   --clr-bg: #181719;
   --font-l: 1.2rem;
-  --font-xxl: 3.5rem;
+  --font-xxl: 2.1rem;
 }
 
 *,
@@ -49,7 +49,7 @@
 }
 
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   font-size: 1.1em;
   color: white;
 }
@@ -107,15 +107,19 @@ header {
 
 /* Home */
 .home {
-  margin-top: 140px;
+  margin-top: 60px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: calc(100% - 120px);
 }
-
+.home__text,
+.home__image {
+  padding: 0 20px;
+}
+.home__text {
+  flex-basis: calc(100% * 2 / 5);
+}
 .home__text h1 {
-  font-family: "Lora", sans-serif;
+  font-family: "Lora";
   font-size: var(--font-xxl);
   justify-self: self-start;
 }
@@ -146,17 +150,25 @@ header {
 }
 .home__image {
   position: relative;
+  flex-basis: calc(100% * 3 / 5);
+  height: 100%;
+  margin-bottom: 120px;
 }
 .realisation {
   max-width: 100%;
 }
 .artist {
   position: absolute;
-  left: 30%;
-  right: 5%;
-  bottom: -28%;
+  right: 40px;
+  bottom: -100px;
   background-color: var(--clr-bg);
   padding: 1.2rem 1.5rem;
+  /* max-width: 50%; */
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .artist__infos {
   display: flex;
@@ -167,7 +179,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 1.2rem;
 }
 .name {
   font-size: 1.1rem;
@@ -183,22 +194,75 @@ header {
 }
 
 .realisation_desc {
+  margin-top: 12px;
   font-family: "Lora", sans-serif;
   font-size: 1.3rem;
+  line-height: 1.6rem;
   font-weight: bold;
 }
 
 footer {
-  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+hr {
+  display: none;
 }
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 992px) {
   .container {
     height: 100%;
+    max-width: 95%;
+  }
+
+  .home {
+    flex-flow: column;
+  }
+
+  .home__text,
+  .home__image {
+    flex-basis: 100%;
+    padding: 0;
+  }
+  .realisation {
+    /* max-height: 350px; */
+  }
+
+  hr {
+    display: inherit;
+    border-color: white;
+    display: block;
+    width: 70%;
+    margin: 20px auto;
+  }
+  .nav {
+    display: none;
+  }
+
+  .artist {
+    height: 138px;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: calc(-138px / 2);
+    height: 138px;
+    max-width: none;
   }
 }
+
+/* @media screen and (max-width: 992px) {
+  .home__text,
+  .home__image {
+    flex-basis: 50%;
+  }
+} */
 
 
 /*# sourceMappingURL=/app.8afbe24a.css.map */
